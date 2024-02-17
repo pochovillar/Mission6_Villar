@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null; // This line indicates that this Razor view does not use a layout
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+
+    <meta name="description" content="A page to find simple and delicious recipes for college students">
+    <title>The Joel Hilton Film Collection</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <div class="hero">
+        <div>
+            <div>
+                <img src="~/img/joelhiltonheadshot.jpg" />
+            </div>
+        </div>
+
+        <h1>Joel Hilton</h1>
+        <h2>The Joel Hilton Film Collection</h2>
+
+        <p></p>
+    </div>
+    <header>
+        <div class="menu-icon">
+            <svg viewBox="0 0 60 60">
+                <line x1="5%" y1="50%" x2="95%" y2="50%" />
+                <line x1="5%" y1="50%" x2="95%" y2="50%" />
+            </svg>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a asp-controller="Home" asp-action="about">Get to Know Joel</a></li>
+                <li><a asp-controller="Home" asp-action="form">Database</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>
+        <p> This page was built by <em>Martin Villar.</em> with no Bootstrap. I do not claim the rights of the videos or images used.</p>
+
+    </footer>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+    <!-- scripts will be here-->
+</body>
+</html>

@@ -1,0 +1,588 @@
+﻿
+:root {
+    --color-font: #333; /* grey */
+    --color-primary: #205373; /* dark blue */
+    --color-secondary: #27292b; /* light black */
+    --color-accent: #a6653f; /* orange brown */
+    --color-accent-light: #f2bc8d; /* light tan */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    /* this an experimental line-height; if it breaks, add line-height: 1.5 to body */
+    line-height: calc(1em + 0.5rem);
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* until you get a feel for overflow, I'll keep these next two commented out */
+/* p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+} */
+
+/* p {
+  overflow-wrap: break-word;
+  hyphens: auto;
+} */
+
+/* temp CSS for HTML only assignments */
+picture img {
+    width: 100%;
+}
+
+.centering {
+    margin: 5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+svg {
+    width: 200px;
+}
+
+/* temp fix to size about img */
+img[srcset] {
+    width: 50%;
+    height: auto;
+    margin: 2rem auto;
+}
+
+/* temporary fix to size svg images */
+img[src$="svg"] {
+    width: 200px;
+}
+
+/************ add your CSS here *****************/
+body,
+h2,
+h3,
+h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+    color: #333;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    bottom: 5rem;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 13rem;
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 2px #0006;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+article,
+aside {
+    margin-bottom: 6rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* .button:hover a{
+  background-color: var(--color-secondary);
+  color: #205373;
+}
+.button{
+
+  transition: background-color 300ms ease;
+  cursor: pointer;
+} */
+main {
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 50rem;
+    align-self: center;
+}
+
+body {
+    font-size: 1rem;
+}
+
+article,
+aside {
+    margin-bottom: 6rem;
+}
+
+aside {
+    padding: 0 1rem;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.hero {
+    position: relative;
+}
+
+    .hero::before {
+        display: block;
+        background-image: linear-gradient(to top, #000, transparent 50%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero h1 {
+        position: absolute;
+        inset: 0;
+        font-size: clamp(1.5rem, 10vw + 1rem, 10rem);
+    }
+
+    .hero h2 {
+        margin-top: 20rem;
+        position: absolute;
+        inset: 0;
+        font-size: clamp(1.5rem, 5vw + 1rem, 5rem);
+    }
+
+.cards {
+    display: flex;
+    gap: 1rem;
+    margin: 0 1rem;
+}
+
+.card {
+    transition: color 300ms, text-decoration 300ms;
+}
+
+    .card:hover {
+        text-decoration: none;
+    }
+
+footer {
+    background-color: #98c1d9;
+}
+
+/* footer p {
+  color: whitesmoke;
+  margin: 0;
+  padding: 3rem 1rem 6rem;
+} */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #000;
+    border: 1px solid #000;
+    box-shadow: var(--color-secondary) 0px 0px 0px 0px inset;
+    padding: 10px 17px;
+    text-align: center;
+    transition: box-shadow 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36), color 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
+    margin-left: 9px;
+}
+
+    .button svg {
+        height: 21px;
+        width: auto;
+        transition: fill 500ms cubic-bezier(0.39, 0.5, 0.15, 1.36);
+    }
+
+    .button:hover svg {
+        text-decoration: none;
+        fill: #fff;
+    }
+
+    .button:hover {
+        text-decoration: none;
+        box-shadow: var(--color-secondary) 0 0px 0px 70px inset;
+        color: #fff;
+    }
+
+a {
+    text-decoration: none;
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+    a[href]:hover {
+        color: var(--color-accent-light);
+    }
+
+.hero picture {
+    height: 100%;
+}
+
+.hero img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    color: #fff;
+    padding: 0 var(--gutter);
+}
+
+.hero h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: clamp(5rem, 12vw + 1rem, 12rem);
+    font-weight: 600;
+    text-shadow: 1px 1px 2px #000;
+    margin: 0;
+    padding: 0;
+}
+
+.hero h2 {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    color: #fff;
+    font-size: clamp(5rem, 4vw + 1rem, 4rem);
+    font-weight: 600;
+    text-shadow: 1px 1px 2px #000;
+    margin: 5rem;
+    padding: 0;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/***** Menu *****/
+header {
+    margin-bottom: var(--gap);
+}
+
+nav {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-primary);
+    visibility: hidden;
+}
+
+.close nav {
+    position: fixed;
+    display: flex;
+    visibility: visible;
+    align-items: flex-start;
+    padding-bottom: 15rem;
+    justify-content: center;
+    inset: 0;
+    z-index: 1;
+}
+
+    .close nav ul {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 0;
+        max-width: 80rem;
+        align-items: center;
+        padding-top: 4rem;
+    }
+
+    .close nav a {
+        display: block;
+        color: #fff;
+    }
+
+header nav ul {
+    display: flex;
+    padding: var(--half-gap) 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+/* header nav ul {
+  display: flex;
+ flex-direction: row;
+ text-decoration: none;
+ list-style-type: none;
+ justify-content: space-between;
+} */
+header nav a {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: var(--half-gap) var(--gutter);
+    padding: 1rem;
+    color: var(--color-secondary);
+}
+
+    header nav a[href]:hover {
+        color: var(--color-secondary);
+        text-shadow: 1px 1px 2px #9e9e9e64;
+    }
+
+    header nav a[href]::after {
+        content: "";
+        position: absolute;
+        display: block;
+        inset: auto 0.5rem 0;
+        height: 3px;
+        background-color: var(--color-secondary);
+    }
+
+    header nav a[href]::after {
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 300ms ease-in-out;
+    }
+
+    header nav a[href]:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 1.5rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #517ea6;
+    z-index: 2;
+}
+
+    .menu-icon line {
+        stroke: #fff;
+        stroke-width: 3px;
+        stroke-linecap: round;
+        transform-origin: center;
+        transition: transform 300ms ease;
+    }
+
+        .menu-icon line:first-child {
+            transform: translateY(16%);
+        }
+
+        .menu-icon line:last-child {
+            transform: translateY(-16%);
+        }
+
+/* JavaScript toggles a "close" class on the <nav> when the menu-icon is clicked */
+
+.close line:first-child {
+    transform: rotate(135deg);
+}
+
+.close line:last-child {
+    transform: rotate(-135deg);
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 1rem;
+}
+
+.card {
+    position: relative;
+    color: #fff;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+    .card p {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        line-height: 1;
+        padding: var(--gutter);
+        background-color: rgb(0 0 0 / 60%);
+        transition: background-color 400ms ease-in-out;
+    }
+
+    .card:hover p {
+        color: transparent;
+        background-color: rgb(0 0 0 / 0%);
+    }
+
+@media (min-width: 480px) {
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        position: static;
+        visibility: visible;
+        background-color: transparent;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (min-width: 900px) {
+    .cards {
+        flex-wrap: nowrap;
+    }
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 90vh;
+}
+
+.video-background {
+    background: #000;
+    position: absolute;
+    inset: 0;
+    z-index: -99;
+}
+
+    .video-foreground,
+    .video-background iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground {
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-foreground {
+        width: 300%;
+        left: -100%;
+    }
+}
+
+.panel .image-wrapper {
+    flex: 1 1 60%;
+    order: 0;
+}
+
+.panel .text-wrapper {
+    flex: 1 1 40%;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (min-width: 600px) {
+    .panel {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--gutter);
+        font-size: 1.25rem;
+        height: 100vh;
+    }
+
+        .panel h2 {
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .panel .text-wrapper {
+            flex: 1 1 40%;
+        }
+
+        .panel .image-wrapper {
+            flex: 1 1 60%;
+            order: 0;
+        }
+
+        .panel .left {
+            order: -1;
+        }
+}
