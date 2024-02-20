@@ -5,8 +5,12 @@ using System.Diagnostics;
 namespace Mission6_Villar.Controllers
 {
     public class HomeController : Controller
-    {          
-
+    {     
+        private MovieDatabaseContext _context;
+        public HomeController(MovieDatabaseContext temp)
+        {
+            _context = temp;
+        }
         public IActionResult Index()
         {
             return View();
@@ -25,7 +29,9 @@ namespace Mission6_Villar.Controllers
         [HttpPost]
         public IActionResult form(Application response)
         {
-
+            _context.Applications.Add(response); //add record to database
+            _context.SaveChanges();
+            return View("Confirmation", response);
         }
     }
 }
