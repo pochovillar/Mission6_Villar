@@ -2,7 +2,7 @@
 
 namespace Mission6_Villar.Models
 {
-    public class Application
+    public class Application // creating Application table
     {
         [Key]
         [Required]
