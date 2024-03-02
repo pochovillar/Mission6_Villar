@@ -33,5 +33,14 @@ namespace Mission6_Villar.Controllers
             _context.SaveChanges();
             return View("Confirmation", response);
         }
+        public IActionResult display()
+        {
+            var applications = _context.Applications.ToList();
+            return View(applications);
+        } 
+        public IActionResult Edit() 
+        {
+            return View("");
+        }
     }
 }

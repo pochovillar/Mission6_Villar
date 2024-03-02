@@ -1,0 +1,65 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    // Layout = null; // Set layout to null. Layout css overriding table css
+}
+<style>
+    /* Your table CSS styles */
+    .pure-table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 800px; /* Example max-width */
+        margin: 0 auto; /* Center the table */
+    }
+
+        .pure-table th,
+        .pure-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .pure-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .pure-table tr:hover {
+            background-color: #ddd;
+        }
+
+        .pure-table th {
+            background-color: #f2f2f2;
+            color: black;
+
+        }
+</style>
+@model List<Application> 
+<table class="pure-table pure-table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>Title</td>
+            <td>Genre</td>
+            <td>Year</td>
+            <td>Director</td>
+            <td>Rating</td>
+            <td>edited</td>
+            <td>lentTo</td>
+        </tr>
+    </thead>
+    @foreach (var x in Model){
+        <tbody>
+            <tr>
+                <td>@x.title</td>
+                <td>@x.genre</td>
+                <td>@x.year</td>
+                <td>@x.director</td>
+                <td>@x.rating</td>
+                <td>@x.edited</td>
+                <td>@x.lentTo</td>
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit">Edit</a></td>
+                <td><a class="btn btn-danger">Delete</a></td>
+            </tr>
+        </tbody>
+    }
+</table>
