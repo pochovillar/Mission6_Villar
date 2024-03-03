@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission6_Villar.Models;
 using System.Diagnostics;
 
@@ -24,20 +25,40 @@ namespace Mission6_Villar.Controllers
         [HttpGet]
         public IActionResult form()
         {
-            return View("form");
+            ViewBag.Categories = _context.Categories
+                .OrderBy(x => x.CategoryName).ToList();
+
+            return View("form", new Movie());
         }
+
+
         [HttpPost]
-        public IActionResult form(Application response)
+        public IActionResult form(Movie response)
         {
-            _context.Applications.Add(response); //add record to database
-            _context.SaveChanges();
-            return View("Confirmation", response);
+            if (ModelState.IsValid)
+            {
+                _context.Movies.Add(response); // Add a record to the database
+                _context.SaveChanges();
+
+                return View("Confirmation", response);
+            }
+            else
+            {
+                ViewBag.Categories = _context.Categories
+                .OrderBy(x => x.CategoryName).ToList();
+
+                return View(response);
+            }
         }
         public IActionResult display()
         {
-            var applications = _context.Applications.ToList();
-            return View(applications);
-        } 
+            // First Linq query
+            var movies = _context.Movies
+                .Include("Category")
+                .OrderBy(x => x.Title).ToList();
+
+            return View(movies);
+        }
         public IActionResult Edit() 
         {
             return View("");

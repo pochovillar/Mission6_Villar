@@ -34,29 +34,31 @@
 
         }
 </style>
-@model List<Application> 
+@model List<Movie>  
 <table class="pure-table pure-table-bordered">
     <thead class="fw-bold">
         <tr>
             <td>Title</td>
-            <td>Genre</td>
+            <td>Category</td>
             <td>Year</td>
             <td>Director</td>
             <td>Rating</td>
             <td>edited</td>
             <td>lentTo</td>
+            <td>Copied To Plex</td>
         </tr>
     </thead>
     @foreach (var x in Model){
         <tbody>
             <tr>
-                <td>@x.title</td>
-                <td>@x.genre</td>
-                <td>@x.year</td>
-                <td>@x.director</td>
-                <td>@x.rating</td>
-                <td>@x.edited</td>
-                <td>@x.lentTo</td>
+                <td>@x.Title</td>
+                <td>@x.Category?.CategoryName</td>
+                <td>@x.Year</td>
+                <td>@x.Director</td>    
+                <td>@x.Rating</td>
+                <td>@x.Edited</td>
+                <td>@x.LentTo</td>
+                <td>@x.CopiedToPlex</td>
                 <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit">Edit</a></td>
                 <td><a class="btn btn-danger">Delete</a></td>
             </tr>
