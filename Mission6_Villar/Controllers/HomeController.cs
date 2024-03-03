@@ -6,7 +6,7 @@ using System.Diagnostics;
 namespace Mission6_Villar.Controllers
 {
     public class HomeController : Controller
-    {     
+    {
         private MovieDatabaseContext _context;
         public HomeController(MovieDatabaseContext temp)
         {
@@ -59,9 +59,25 @@ namespace Mission6_Villar.Controllers
 
             return View(movies);
         }
-        public IActionResult Edit() 
+        [HttpGet]
+        public IActionResult Edit(int MovieId) 
         {
-            return View("");
+
+            var recordToEdit = _context.Movies
+                .Single(x => x.MovieId == MovieId);
+
+            ViewBag.Categories = _context.Categories
+                .OrderBy(x => x.CategoryName)
+                .ToList();
+            return View("form", recordToEdit);
+        }
+        [HttpPost]
+        public IActionResult Edit(Movie updatedInfo)
+        {
+            _context.Update(updatedInfo);
+            _context.SaveChanges();
+
+            return RedirectToAction("display");
         }
     }
 }

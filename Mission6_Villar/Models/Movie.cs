@@ -18,7 +18,7 @@ namespace Mission6_Villar.Models
 
         [Required]
         [Range(1888, 2024, ErrorMessage = "You must enter a year between 1888 and 2024. ")] // To not let users enter a movie before 1888
-        public int Year { get; set; } = 1888;
+        public int Year { get; set; }
 
         public string? Director { get; set; }
         public string? Rating { get; set; }
