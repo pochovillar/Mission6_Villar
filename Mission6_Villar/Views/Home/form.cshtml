@@ -47,8 +47,8 @@
     <div>
         <label asp-for="Edited">Edited:</label>
         <select asp-for="Edited" class="form-control" required>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
         </select>
         <span asp-validation-for="Edited" class="text-danger"></span>
     </div>
@@ -62,5 +62,14 @@
         <input asp-for="Notes" class="form-control" maxlength="25" />
         <span asp-validation-for="Notes" class="text-danger"></span>
     </div>
+    <div>
+    <label asp-for="CopiedToPlex">Copied to plex:</label>
+    <select asp-for="CopiedToPlex" class="form-control" required>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+    <span asp-validation-for="CopiedToPlex" class="text-danger"></span>
+    </div>
     <button type="submit">Submit</button>
+    
 </form>

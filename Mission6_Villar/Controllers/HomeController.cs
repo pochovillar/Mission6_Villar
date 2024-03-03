@@ -79,5 +79,23 @@ namespace Mission6_Villar.Controllers
 
             return RedirectToAction("display");
         }
+
+        [HttpGet]
+        public IActionResult Delete2(int MovieId)
+        {
+            var recordToDelete = _context.Movies
+                .Single(x => x.MovieId == MovieId);
+
+            return View(recordToDelete);
+
+        }
+        [HttpPost]
+        public IActionResult Delete2(Movie movie)
+        {
+            _context.Movies.Remove(movie);
+            _context.SaveChanges();
+
+            return RedirectToAction("display");
+        }
     }
 }

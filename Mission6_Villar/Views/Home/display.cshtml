@@ -54,13 +54,14 @@
                 <td>@x.Title</td>
                 <td>@x.Category?.CategoryName</td>
                 <td>@x.Year</td>
+                <a href="c:\users\mvill\source\repos\mission6_villar\mission6_villar\views\home\display.cshtml">c:\users\mvill\source\repos\mission6_villar\mission6_villar\views\home\display.cshtml</a>
                 <td>@x.Director</td>    
                 <td>@x.Rating</td>
                 <td>@x.Edited</td>
                 <td>@x.LentTo</td>
                 <td>@x.CopiedToPlex</td>
                 <td><a asp-controller="Home" asp-action="Edit" asp-route-movieId="@x.MovieId" class="btn btn-info">Edit</a></td>
-                <td><a asp-controller="Home" asp-action="Delete" asp-route-movieId="@x.MovieId" class="btn btn-danger">Delete</a></td>
+                <td><a asp-controller="Home" asp-action="Delete2" asp-route-movieId="@x.MovieId" class="btn btn-danger">Delete</a></td>
             </tr>
         </tbody>
     }
